@@ -5,7 +5,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>#beerclub</title>
+  <title>#cakeclub</title>
   <meta >
   <link href='http://fonts.googleapis.com/css?family=Lato:300,900&text=abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ%2C.%22%3A%5B%5D()'rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Euphoria+Script&text=theruls' rel='stylesheet' type='text/css'>
@@ -97,10 +97,10 @@
       border-radius: 3px
     }
 
-    .drop {
+    .cake {
       font-size: 1.4em;
     }
-      .drop span {
+      .cake span {
         color: #8b191f;
       }
 
@@ -151,29 +151,27 @@
 </head>
 <body>
   <header>
-    <h1>#BEERCLUB</h1>
+    <h1>#CAKECLUB</h1>
     <h2>rules</h2>
     <ol class="rules">
-      <li>You do not talk about beer club.</li>
-      <li>You can talk about beer club if you like. It's fine.</li>
+      <li>You do not talk about cake club.</li>
+      <li>You can talk about cake club if you like. It's fine.</li>
     </ol>
   </header>
   <ul>
-  {% for drop in site.data.drops %}
+  {% for cake in site.data.cakes %}
     <li>
-      <a class="photo" href="{{ drop.instagramUrl }}" id="{{ drop.beer | replace: ' ', '_' }}">
-        <img src="{{ drop.instagramUrl }}/media/?size=t" />
+      <a class="photo" href="{{ cake.instagramUrl }}" id="{{ cake.title | replace: ' ', '_' }}">
+        <img src="{{ cake.instagramUrl }}/media/?size=t" />
       </a>
-      <p><time datetime="{{ drop.date }}">{{ drop.date | date_to_string }}</time></p>
-      <p class="drop">{{ drop.beer }} <span>from</span> {{ drop.brewery }}</p>
-      <p class="description">{{ drop.description }}</p>
-      <p>Brought to the club by <a class="member" href="http://twitter.com/{{ drop.member }}">@{{ drop.member }}</a></p>
+      <p><time datetime="{{ cake.date }}">{{ cake.date | date_to_string }}</time></p>
+      <p class="description">{{ cake.description }}</p>
+      <p>Brought to the club by <a class="member" href="http://twitter.com/{{ cake.member }}">@{{ cake.member }}</a></p>
     </li>
   {% endfor %}
   </ul>
   <footer>
-    <p>#beerclub takes place each thursday afternoon at <a href="http://rga.com">R/GA London</a></p>
-    <p>Update this site on <a href="https://github.com/philhawksworth/beerclub/blob/gh-pages/_data/drops.yml">Github</a></p>
+    <p>#cakeclub takes place each friday afternoon at <a href="https://www.hachette.co.uk/">Hachette UK</a></p>
   </footer>
 </body>
 </html>

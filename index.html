@@ -158,7 +158,7 @@
     </ol>
   </header>
   <ul>
-  {% for cake in site.data.cakes %}
+  {% for cake in site.data.cakes reversed %}
     <li>
       <a class="photo" href="{{ cake.instagramUrl }}" id="{{ cake.title | replace: ' ', '_' }}">
         <img src="{{ cake.instagramUrl }}/media/?size=t" />
